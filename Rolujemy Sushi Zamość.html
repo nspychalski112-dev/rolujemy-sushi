@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rolujemy Sushi Zamość – sushi robione na zamówienie</title>
+<meta name="description" content="Rolujemy Sushi Zamość: świeże sushi, zestawy na dowóz i catering dla firm.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,800&family=Manrope:wght@400;500;700&subset=latin-ext&display=swap">
+<style>
+:root{--bg:#f4f7f6;--surface:#fff;--ink:#10222b;--muted:#51656d;--line:#d6e0dd;--nori:#1f4d3f;--red:#c2274b;--on-dark:#f4f7f6;
+--serif:'Fraunces',Georgia,serif;--sans:'Manrope',system-ui,sans-serif;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d1a20;--surface:#14262e;--ink:#eef3f1;--muted:#9fb3ba;--line:#26414b;--nori:#7fc4a8;--red:#ff5c80}}
+:root[data-theme="dark"]{--bg:#0d1a20;--surface:#14262e;--ink:#eef3f1;--muted:#9fb3ba;--line:#26414b;--nori:#7fc4a8;--red:#ff5c80}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 72px)}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 var(--sans)}
+h1,h2,h3{font-family:var(--serif);line-height:1.1;margin:0;letter-spacing:-.02em}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font:800 22px var(--serif);text-decoration:none;display:flex;align-items:center;gap:10px}
+.logo i{width:22px;height:22px;border-radius:50%;background:radial-gradient(circle,var(--red) 0 28%,#f4f7f6 29% 58%,var(--nori) 59%)}
+nav{display:flex;gap:28px;align-items:center}
+nav a{text-decoration:none;font-weight:500;font-size:15px;color:var(--muted)}
+nav a:hover{color:var(--ink)}
+.btn{display:inline-block;background:var(--red);color:#fff!important;padding:13px 26px;border-radius:999px;font-weight:700;text-decoration:none;border:0;cursor:pointer;font:700 16px var(--sans);transition:transform .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn.ghost{background:none;color:var(--ink)!important;border:1.5px solid var(--ink)}
+.hero{padding:72px 0 96px;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+.hero h1{font-size:clamp(46px,7vw,92px);font-weight:800}
+.hero h1 span{display:block;color:var(--nori)}
+.hero p{max-width:46ch;color:var(--muted);font-size:19px;margin:24px 0 32px}
+.cta{display:flex;gap:14px;flex-wrap:wrap}
+.roll{width:100%;max-width:420px;margin:auto;aspect-ratio:1;position:relative}
+.roll svg{width:100%;height:100%;animation:spin 14s linear infinite,enter 1.4s cubic-bezier(.2,.8,.2,1) both}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes enter{from{transform:translateX(160%) rotate(-540deg);opacity:0}}
+.roll .plate{position:absolute;inset:-6% -10%;border-radius:50%;background:var(--surface);border:1px solid var(--line);z-index:-1}
+section{padding:88px 0}
+.head{max-width:640px;margin-bottom:40px}
+.head h2{font-size:clamp(34px,4.5vw,54px);font-weight:600}
+.head p{color:var(--muted);margin:14px 0 0}
+.tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px}
+.tab{padding:10px 20px;border-radius:999px;border:1.5px solid var(--line);background:none;color:var(--ink);font:500 15px var(--sans);cursor:pointer}
+.tab[aria-selected="true"]{background:var(--nori);border-color:var(--nori);color:var(--on-dark)}
+:root[data-theme="dark"] .tab[aria-selected="true"]{color:#0d1a20}
+.menu{display:grid;grid-template-columns:repeat(2,1fr);gap:0 56px}
+.item{display:flex;justify-content:space-between;gap:20px;padding:20px 0;border-bottom:1px solid var(--line)}
+.item h3{font-size:21px;font-weight:600}
+.item p{margin:4px 0 0;color:var(--muted);font-size:15px}
+.item b{font:600 20px var(--serif);white-space:nowrap}
+.band{background:var(--nori);color:var(--on-dark)}
+.band .head p{color:#cfe0d8}
+.band .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:36px}
+.band h3{font-size:24px;margin-bottom:10px}
+.band p{margin:0;color:#cfe0d8;font-size:16px}
+.band .btn{margin-top:44px;background:#fff;color:var(--nori)!important}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.about ul{list-style:none;padding:0;margin:0;display:grid;gap:18px}
+.about li{padding-left:22px;position:relative;border-left:3px solid var(--red)}
+.about li strong{display:block;font:600 20px var(--serif)}
+.about li span{color:var(--muted);font-size:15px}
+.contact{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px}
+.info p{margin:0 0 18px}.info small{display:block;color:var(--muted)}
+form{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:32px;display:grid;gap:16px}
+label{font-weight:700;font-size:14px;display:grid;gap:6px}
+input,select,textarea{font:400 16px var(--sans);padding:13px 14px;border:1.5px solid var(--line);border-radius:12px;background:var(--bg);color:var(--ink);width:100%}
+#ok{display:none;color:var(--nori);font-weight:700;margin:0}
+footer{border-top:1px solid var(--line);padding:32px 0;color:var(--muted);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.rv{opacity:0;transform:translateY(18px);transition:.7s}.rv.in{opacity:1;transform:none}
+@media (max-width:820px){nav a:not(.btn){display:none}.hero .wrap,.about,.contact,.menu,.band .grid{grid-template-columns:1fr}.menu{gap:0}.roll{max-width:300px}section{padding:64px 0}}
+@media (prefers-reduced-motion:reduce){.roll svg{animation:none}.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<a class="logo" href="#top"><i></i>Rolujemy Sushi</a>
+<nav aria-label="Główna"><a href="#menu">Menu</a><a href="#firmy">Dla firm</a><a href="#o-nas">O nas</a><a class="btn" href="#kontakt">Zamów</a></nav>
+</div></header>
+
+<main id="top">
+<div class="hero"><div class="wrap">
+<div>
+<h1>Rolujemy<span>z sercem Zamościa.</span></h1>
+<p>Sushi przygotowywane na bieżąco, z ryżu gotowanego codziennie i świeżych składników. Na wynos, z dowozem i na spotkania firmowe.</p>
+<div class="cta"><a class="btn" href="#kontakt">Złóż zamówienie</a><a class="btn ghost" href="#firmy">Oferta dla firm</a></div>
+</div>
+<div class="roll" aria-hidden="true"><div class="plate"></div>
+<svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="92" fill="#1f4d3f"/><circle cx="100" cy="100" r="78" fill="#f4f7f6"/>
+<g fill="none" stroke="#e6ece9" stroke-width="1.2"><circle cx="100" cy="100" r="70"/><circle cx="100" cy="100" r="60"/></g>
+<circle cx="100" cy="100" r="34" fill="#ff7a5c"/><path d="M100 66a34 34 0 0 1 0 68" fill="none" stroke="#ffb09c" stroke-width="3"/>
+<circle cx="100" cy="100" r="13" fill="#8bc34a"/><circle cx="100" cy="100" r="5" fill="#d7eebf"/></svg></div>
+</div></div>
+
+<section id="menu"><div class="wrap">
+<div class="head"><h2>Menu</h2><p>Wybierz kategorię. Ceny przykładowe, zaktualizuj je przed publikacją.</p></div>
+<div class="tabs" role="tablist" id="tabs"></div>
+<div class="menu" id="menuList"></div>
+</div></section>
+
+<section class="band" id="firmy"><div class="wrap">
+<div class="head"><h2>Catering dla firm</h2><p>Spotkania, szkolenia i wydarzenia zasługują na jedzenie, które robi dobre wrażenie.</p></div>
+<div class="grid">
+<div><h3>Zestawy na spotkania</h3><p>Półmiski od 20 osób, dopasowane do budżetu i diety uczestników, także wegetariańskie.</p></div>
+<div><h3>Punktualny dowóz</h3><p>Dostawa w ustalonym oknie czasowym w Zamościu i okolicach, z estetycznym serwisem.</p></div>
+<div><h3>Faktura i stała współpraca</h3><p>Rozliczenia na fakturę VAT oraz stałe zamówienia dla biur w abonamencie.</p></div>
+</div>
+<a class="btn" href="#kontakt">Zapytaj o wycenę</a>
+</div></section>
+
+<section id="o-nas"><div class="wrap about">
+<div class="head" style="margin:0"><h2>Mała kuchnia, duża dbałość</h2><p>Jesteśmy lokalną firmą z Zamościa. Każdą rolkę zwijamy po przyjęciu zamówienia, dlatego smak i tekstura są takie, jakie powinny być.</p></div>
+<ul>
+<li><strong>Świeże składniki</strong><span>Ryby i warzywa od sprawdzonych dostawców, dostawy kilka razy w tygodniu.</span></li>
+<li><strong>Zwijane na zamówienie</strong><span>Bez gotowych zapasów w lodówce.</span></li>
+<li><strong>Standardy kuchni</strong><span>Dbamy o higienę i łańcuch chłodniczy na każdym etapie.</span></li>
+</ul>
+</div></section>
+
+<section id="kontakt" style="background:var(--surface);border-top:1px solid var(--line)"><div class="wrap contact">
+<div class="info"><div class="head" style="margin-bottom:24px"><h2>Zamów lub zapytaj</h2></div>
+<p><strong>Telefon</strong><small>+48 000 000 000</small></p>
+<p><strong>E-mail</strong><small>kontakt@rolujemysushi.pl</small></p>
+<p><strong>Adres</strong><small>ul. Przykładowa 1, Zamość</small></p>
+<p><strong>Godziny</strong><small>Pon.–Czw. 12:00–21:00, Pt.–Sob. 12:00–22:00, Niedz. 13:00–20:00</small></p></div>
+<form id="f">
+<label>Imię i nazwisko lub firma<input required autocomplete="name"></label>
+<label>Telefon lub e-mail<input required autocomplete="email"></label>
+<label>Rodzaj zapytania<select><option>Zamówienie z dowozem</option><option>Catering dla firmy</option><option>Inne</option></select></label>
+<label>Wiadomość<textarea rows="4" placeholder="Termin, liczba osób, uwagi"></textarea></label>
+<button class="btn" type="submit">Wyślij zapytanie</button>
+<p id="ok" role="status">Dziękujemy! Odezwiemy się najszybciej, jak to możliwe.</p>
+</form>
+</div></section>
+</main>
+
+<footer><div class="wrap"><span>© 2026 Rolujemy Sushi Zamość</span><span>Sushi na zamówienie</span></div></footer>
+
+<script>
+const M={"Maki":[["Maki z łososiem","ryż, nori, łosoś, 6 szt.","24 zł"],["Maki z ogórkiem","ryż, nori, ogórek, 6 szt.","18 zł"],["Maki z tuńczykiem","ryż, nori, tuńczyk, 6 szt.","26 zł"],["Maki z awokado","ryż, nori, awokado, 6 szt.","20 zł"]],
+"Uramaki":[["California","krab, awokado, ogórek, sezam, 8 szt.","36 zł"],["Filadelfia","łosoś, serek, ogórek, 8 szt.","38 zł"],["Krewetka tempura","krewetka, sos spicy, 8 szt.","42 zł"],["Vege uramaki","awokado, papryka, marchew, 8 szt.","32 zł"]],
+"Zestawy":[["Zestaw dla dwojga","24 szt., wybór mistrza","89 zł"],["Zestaw rodzinny","48 szt., 4 rodzaje","169 zł"],["Zestaw firmowy","od 20 osób, wycena indywidualna","od 35 zł/os."],["Zestaw wegetariański","24 szt.","79 zł"]]};
+const tabs=document.getElementById('tabs'),list=document.getElementById('menuList');
+function show(k){[...tabs.children].forEach(b=>b.setAttribute('aria-selected',b.dataset.k===k));
+list.innerHTML=M[k].map(i=>`<div class="item"><div><h3>${i[0]}</h3><p>${i[1]}</p></div><b>${i[2]}</b></div>`).join('')}
+Object.keys(M).forEach((k,n)=>{const b=document.createElement('button');b.className='tab';b.role='tab';b.textContent=k;b.dataset.k=k;b.onclick=()=>show(k);tabs.appendChild(b)});
+show('Maki');
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.12});
+document.querySelectorAll('.head,.band .grid,.about ul,form').forEach(el=>{el.classList.add('rv');io.observe(el)});
+document.getElementById('f').addEventListener('submit',e=>{e.preventDefault();e.target.reset();document.getElementById('ok').style.display='block'});
+</script>
+</body>
+</html>
